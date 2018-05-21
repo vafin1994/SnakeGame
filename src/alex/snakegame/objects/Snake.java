@@ -2,24 +2,24 @@ package alex.snakegame.objects;
 
 import alex.snakegame.SnakeGame;
 
-//создаем саму змейку
+//Snake creating
 public class Snake {
 	SnakeGame main;
-	public int direction = 0; //Переменная задает направление движения змейки	
-	public int length = 3; //Начальная длина змейки;
-	public int snakeX[] = new int[main.WIDTH * main.HEIGHT];//Максимальная величина змейки
+	public int direction = 0; 
+	public int length = 3; //Length of snake in the beggining of the game
+	public int snakeX[] = new int[main.WIDTH * main.HEIGHT];//Snake max length
 	public int snakeY[] = new int[main.WIDTH * main.HEIGHT];
 	
-	//Создаем конструктор змейки
+	//Snake constructor
 	public Snake(int x0, int y0, int x1, int y1) {
 		snakeX[0] = x0;
 		snakeY[0] = y0;
 		snakeX[1] = x1;
 		snakeY[1] = y1;
 	}
-	//Создаем метод имитирующий движение (закрашивает элемент фона)
+	//Snake moving method(background filling)
 	public void move() {
-		//Если змейка зайдет за край, то появится с другой стороны
+		//If snake head rich the end of window, it is move to opposite side
 		if(snakeX[0] > main.WIDTH) snakeX[0] = 0;
 		if(snakeY[0] > main.HEIGHT) snakeY[0] = 0;
 		if(snakeX[0] < 0) snakeX[0] = main.WIDTH;
@@ -30,8 +30,7 @@ public class Snake {
 			snakeX[d] = snakeX[d-1];
 			snakeY[d] = snakeY[d-1];
 		}
-		//При движении змейки закрышиваются элементы, в зависимости
-		//от направления движения
+		//Snake move
 		if(direction == 0) snakeX[0]++;
 		if(direction == 1) snakeY[0]++;
 		if(direction == 2) snakeX[0]--;

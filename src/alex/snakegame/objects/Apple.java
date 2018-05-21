@@ -1,5 +1,4 @@
-//—оздаем €блоко, которое по€вл€етс€ в случайном месте, может быть съедено
-//змеей от чего та увеличитс€, а €блоко по€витс€ в другом случайном месте
+//Creating apple, and after Snake eat? apple move to another randome place
 package alex.snakegame.objects;
 
 import alex.snakegame.SnakeGame;
